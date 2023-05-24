@@ -169,15 +169,52 @@
             app:layout_constraintStart_toEndOf="@+id/tv_login_page_or"
             app:layout_constraintTop_toBottomOf="@+id/linearlayout_forgot_password" />
 
+        <TextView
+            android:id="@+id/google_sign_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_google_sign_up_button"
+            android:textSize="37sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_login_page_or" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="150dp"
+            android:src="@drawable/google_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/google_sign_in_button"
+            app:layout_constraintEnd_toEndOf="@+id/google_sign_in_button"
+            app:layout_constraintStart_toStartOf="@+id/google_sign_in_button"
+            app:layout_constraintTop_toTopOf="@+id/google_sign_in_button" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in with Google"
+            android:textColor="@color/wine_red"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="1dp"
+            android:paddingStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/google_sign_in_button"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
+            app:layout_constraintTop_toTopOf="@+id/google_sign_in_button" />
+
         <LinearLayout
             android:id="@+id/linearlayout_no_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/btn_login"
-            app:layout_constraintStart_toStartOf="@+id/btn_login"
-            app:layout_constraintTop_toBottomOf="@+id/tv_login_page_or" >
+            app:layout_constraintEnd_toEndOf="@+id/google_sign_in_button"
+            app:layout_constraintStart_toStartOf="@+id/google_sign_in_button"
+            app:layout_constraintTop_toBottomOf="@+id/google_sign_in_button" >
 
             <TextView
                 android:id="@+id/tv_no_account"
