@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/wine_red"
+    android:background="@color/violet_light"
     tools:context=".RegistrationScreen">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,7 +24,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="25dp"
             android:text="Sign Up"
-            android:textColor="@color/wine_red"
+            android:textColor="@color/violet_light"
             android:textSize="35sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -156,7 +156,7 @@
             android:textSize="18sp"
             android:paddingBottom="2dp"
             android:textStyle="bold"
-            android:textColor="@color/wine_red"
+            android:textColor="@color/violet_light"
             app:layout_constraintBottom_toBottomOf="@+id/iv_check_box"
             app:layout_constraintStart_toEndOf="@+id/tv_i_agree"
             app:layout_constraintTop_toTopOf="@+id/iv_check_box" />
@@ -181,7 +181,7 @@
             android:textSize="18sp"
             android:paddingBottom="2dp"
             android:textStyle="bold"
-            android:textColor="@color/wine_red"
+            android:textColor="@color/violet_light"
             app:layout_constraintStart_toStartOf="@+id/tv_i_agree"
             app:layout_constraintTop_toBottomOf="@+id/tv_T_nd_C" />
 
@@ -263,7 +263,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign up with Google"
-            android:textColor="@color/wine_red"
+            android:textColor="@color/violet_light"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="1dp"
@@ -294,7 +294,7 @@
                 android:layout_height="wrap_content"
                 android:text="Sign in"
                 android:textStyle="bold"
-                android:textColor="@color/wine_red"
+                android:textColor="@color/violet_light"
                 android:textSize="18sp" />
 
         </LinearLayout>

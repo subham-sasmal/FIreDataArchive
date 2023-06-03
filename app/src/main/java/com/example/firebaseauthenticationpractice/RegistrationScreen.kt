@@ -2,6 +2,7 @@ package com.example.firebaseauthenticationpractice
 
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,14 +19,17 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.lang.Exception
+import kotlin.Exception
 
 class RegistrationScreen : Fragment() {
+    private val TAG = "RegistrationScreen"
+
     private lateinit var edittxt_email: EditText
     lateinit var edittxt_password: EditText
     lateinit var btn_register: Button
@@ -52,7 +56,8 @@ class RegistrationScreen : Fragment() {
 
             var cntr = 0
 
-            auth = FirebaseAuth.getInstance()               // Saving the instance in auth which of type FirebaseAuth
+            auth =
+                FirebaseAuth.getInstance()               // Saving the instance in auth which of type FirebaseAuth
 
 
             /*
@@ -135,7 +140,22 @@ class RegistrationScreen : Fragment() {
             googleSignIn = GoogleSignIn.getClient(context, gso)
 
             findViewById<TextView>(R.id.google_sign_up_button).setOnClickListener() {
-                signInGoogle()
+                if (cntr != 0) {
+                    CoroutineScope(Dispatchers.IO).launch {
+                        try {
+                            signInGoogle()
+                        } catch (e: Exception) {
+                            withContext(Dispatchers.Main) {
+                                Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                } else
+                    Toast.makeText(
+                        context,
+                        "Please accept the Terms & Conditions",
+                        Toast.LENGTH_SHORT
+                    ).show()
             }
             //--------------------------------------------------------------------------------------
         }
@@ -149,19 +169,20 @@ class RegistrationScreen : Fragment() {
     }
 
     private val launcher =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        result ->
-                if (result.resultCode == Activity.RESULT_OK) {
-                    val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-                    handleResults(task)
-                }
-    }
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+                handleResults(task)
+            }
+        }
 
     private fun handleResults(task: Task<GoogleSignInAccount>) {
         if (task.isSuccessful) {
             val account: GoogleSignInAccount? = task.result
-            if (account != null)
+
+            if (account != null) {
                 updateUI(account)
+            }
         }
     }
 
@@ -186,14 +207,14 @@ class RegistrationScreen : Fragment() {
             .addOnCompleteListener() { task ->
                 if (task.result?.signInMethods?.size == 0) {
                     checkLoggedInState()
-                } else
+                } else {
                     Toast.makeText(context, "Email already in use!", Toast.LENGTH_SHORT).show()
+                }
             }
     }
 
     private fun checkLoggedInState() {
         if (auth.currentUser != null) {
-//            Toast.makeText(context, "Successfully registered", Toast.LENGTH_SHORT).show()
             parentFragmentManager.beginTransaction().apply {
                 replace(R.id.FragmentHolder, MainScreen()).commit()
             }

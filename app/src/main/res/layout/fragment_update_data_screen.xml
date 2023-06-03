@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateDataScreen">
+
+    <EditText
+        android:id="@+id/et_update_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints="Subham"
+        android:background="@drawable/bg_credentials_entry_universal"
+        android:hint="Enter Name"
+        android:inputType="text"
+        android:paddingStart="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="#5f5f61"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_update_age"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:autofillHints="22"
+        android:background="@drawable/bg_credentials_entry_universal"
+        android:hint="Enter Age"
+        android:inputType="number"
+        android:paddingStart="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="#5f5f61"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_update_name" />
+
+    <EditText
+        android:id="@+id/et_update_details"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:autofillHints="22"
+        android:background="@drawable/bg_credentials_entry_universal"
+        android:hint="Enter Phone Number"
+        android:inputType="number"
+        android:paddingStart="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="#5f5f61"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_update_age" />
+
+    <EditText
+        android:id="@+id/et_update_address"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:autofillHints="22"
+        android:background="@drawable/bg_credentials_entry_universal"
+        android:hint="Enter Address"
+        android:inputType="textShortMessage"
+        android:paddingStart="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="#5f5f61"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_update_details" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/update_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button_universal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="Update Data"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/cream_white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_update_address" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

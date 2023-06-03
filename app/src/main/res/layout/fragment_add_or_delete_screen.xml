@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddOrDeleteScreen">
+
+    <TextView
+        android:id="@+id/tv_enter_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter your details"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_enter_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:autofillHints="Subham"
+        android:background="@drawable/bg_credentials_entry_universal"
+        android:hint="Enter Name"
+        android:inputType="text"
+        android:paddingStart="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="#5f5f61"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter_details" />
+
+    <EditText
+        android:id="@+id/et_enter_age"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:autofillHints="22"
+        android:background="@drawable/bg_credentials_entry_universal"
+        android:hint="Enter Age"
+        android:inputType="number"
+        android:paddingStart="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="#5f5f61"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_enter_name" />
+
+    <EditText
+        android:id="@+id/et_contact_details"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:autofillHints="22"
+        android:background="@drawable/bg_credentials_entry_universal"
+        android:hint="Enter Phone Number"
+        android:inputType="number"
+        android:paddingStart="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="#5f5f61"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_enter_age" />
+
+    <EditText
+        android:id="@+id/et_address_details"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:autofillHints="22"
+        android:background="@drawable/bg_credentials_entry_universal"
+        android:hint="Enter Address"
+        android:inputType="textShortMessage"
+        android:paddingStart="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="#5f5f61"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_contact_details" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_save_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/bg_button_universal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="Save Data"
+        android:textColor="@color/cream_white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btn_retrieve_data"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_address_details" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_retrieve_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/bg_button_universal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="Retrive Data"
+        android:textColor="@color/cream_white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_save_data"
+        app:layout_constraintTop_toBottomOf="@+id/et_address_details" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_update_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_button_universal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="Update Data"
+        android:textColor="@color/cream_white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btn_delete_data"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_save_data" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_delete_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_button_universal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="Delete Data"
+        android:textColor="@color/cream_white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_update_data"
+        app:layout_constraintTop_toBottomOf="@+id/btn_retrieve_data" />
+
+    <TextView
+        android:id="@+id/tv_retrieved_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:textSize="9sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_update_data" />
+
+    <TextView
+        android:id="@+id/tv_retrieved_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="9sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_retrieved_name"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tv_retrieved_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="9sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_retrieved_age" />
+
+    <TextView
+        android:id="@+id/tv_retrieved_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="9sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_retrieved_phone" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
